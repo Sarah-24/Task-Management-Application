@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,108 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    
+    <div class="modal fade" id="addNewItem" tabindex="-1" aria-labelledby="addNewItem" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addNewItemLabel">Add New Task</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addTaskForm">
+                        <div class="mb-3">
+                            <label for="imageUrl" class="form-label">Image URL</label>
+                            <input type="url" class="form-control form-details" id="imageUrl"
+                                aria-describedby="imageUrl" placeholder="https://example.com/image.jpg" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskTitle" class="form-label">Task Title</label>
+                            <input type="text" class="form-control form-details" id="taskTitle" placeholder="Task Title"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskType" class="form-label">Task Type</label>
+                            <input type="text" class="form-control form-details" id="taskType"
+                                placeholder="Task Type Tags" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="taskDesc" class="form-label">Task Description</label>
+                            <textarea type="text" class="form-control form-details" id="taskDesc"
+                                placeholder="Task Description" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" id="addTaskBtn" data-bs-dismiss="modal"
+                        form="addTaskForm">Add Task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler m-3" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse m-3" id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <a class="navbar-brand" href="#">Tasky</a>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-warning d-flex gap-2 p-2 flex-wrap align-items-center" type="button"
+                    data-bs-toggle="modal" data-bs-target="#addNewItem"><i class="fa-solid fa-plus"
+                        style="font-size: small;"></i>Add New
+                    Item
+                </button>
+            </div>
+        </div>
+    </nav>
+    <section class="container d-flex mt-5 flex-column gap-5">
+        <div class="d-flex align-items-center h-25 w-75 justify-content-center mt-3 sticky-md-top align-self-center">
+            <input class="form-control m-2 me-0 shadow custom-search-input py-2" type="search" placeholder="Search"
+                aria-label="Search" id="searchInput">
+            <span class="custom-search-icon"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #f4bd17;"
+                    id="searchIcon"></i>
+            </span>
+        </div>
+        <div id="cardContainer">
+
+        </div>
+    </section>
+    <footer class="w-100 mt-3">
+        <button
+            class="btn btn-warning d-xs-flex d-lg-none gap-2 p-2 flex-wrap align-items-center mb-2 ms-2 sticky-bottom"
+            type="button" data-bs-toggle="modal" data-bs-target="#addNewItem"><i class="fa-solid fa-plus"
+                style="font-size: small;"></i>Add New
+            Item
+        </button>
+    </footer>
+    <script src="https://kit.fontawesome.com/3ff1ed4e0b.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./script.js"></script>
 </body>
+
 </html>
